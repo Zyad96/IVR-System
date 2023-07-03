@@ -3,7 +3,7 @@
   <form>
     <block>
       <prompt>
-        <audio src="rate_prompt.wav" />
+        <!-- <audio src="rate_prompt.wav" /> -->
       </prompt>
       <filled>
         <if cond="rating == 1">
@@ -31,14 +31,26 @@
           <prompt>
            <audio src="satisfied_prompt.wav" />
           </prompt>
+         <!--  -->
+        <elseif cond="rating == 6"/>
+          <assign name="userRating" expr="6" />
+          <prompt>
+          <!-- <audio src="complaint_prompt.wav" /> -->
+          </prompt>
+         <record name="userSpeech" finalsilence="3s">
+           <prompt>
+             Please speak your complaint after the beep.
+           </prompt>
+          </record>
+         <!--  -->
         <else/>
           <prompt>
-            <audio src="invalid_rating_prompt.wav" />
+            <!-- <audio src="invalid_rating_prompt.wav" /> -->
           </prompt>
           <assign name="attempts" expr="attempts + 1"/>
           <if cond="attempts >= 3">
             <prompt>
-              <audio src="goodbye_prompt.wav" />
+              <!-- <audio src="goodbye_prompt.wav" /> -->
             </prompt>
             <disconnect/>
           </if>
@@ -52,18 +64,18 @@
       </catch>
       <collect>
         <prompt>
-          <audio src="rate_digits_prompt.wav" />
+          <!-- <audio src="rate_digits_prompt.wav" /> -->
         </prompt>
         <grammar src="digits.grxml" />
         <noinput>
           <prompt>
-            <audio src="noinput_prompt.wav" />
+            <!-- <audio src="noinput_prompt.wav" /> -->
           </prompt>
           <reprompt />
         </noinput>
         <nomatch>
           <prompt>
-            <audio src="nomatch_prompt.wav" />
+            <!-- <audio src="nomatch_prompt.wav" /> -->
           </prompt>
           <reprompt />
         </nomatch>
