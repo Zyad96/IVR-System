@@ -1,3 +1,10 @@
+<%-- 
+    Document   : VxmlUpload
+    Created on : Jun 30, 2023, 2:44:36 AM
+    Author     : aisha
+--%>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,7 +53,7 @@
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-secondary navbar-dark">
                 <a href="index.html" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>IVR</h3>
+                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>DarkPan</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
@@ -60,28 +67,16 @@
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="index.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-             
-                     <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a> 
-                             <a href="UploadVXML.html" class="nav-item nav-link"><i class="fas fa-edit"></i>Edit VXML</a>
-                    <!-- <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="button.html" class="dropdown-item">Buttons</a>
-                            <a href="typography.html" class="dropdown-item">Typography</a>
-                            <a href="element.html" class="dropdown-item">Other Elements</a>
-                        </div>
-                    </div> -->
-<!--                     <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
-                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
-                    
--->                    <a href="chart.html" class="nav-item nav-link active"><i class="fa fa-chart-bar me-2"></i>Charts</a><!--
                     <div class="nav-item dropdown">
-                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a> 
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="signin.html" class="dropdown-item">Sign In</a>
-                            <a href="signup.html" class="dropdown-item">Sign Up</a>
-                            <a href="404.html" class="dropdown-item">404 Error</a>
-                            <a href="blank.html" class="dropdown-item">Blank Page</a>-->
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
+
+                        </div>
+                    </div>
+                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>-->
+                    <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
+                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
+                     <a href="UploadVXML.html" class="nav-item nav-link"><i class="fas fa-edit"></i>Edit VXML</a>
+
                         </div>
                     </div>
                 </div>
@@ -100,10 +95,10 @@
                 <a href="#" class="sidebar-toggler flex-shrink-0">
                     <i class="fa fa-bars"></i>
                 </a>
-                <!-- <form class="d-none d-md-flex ms-4">
+                <form class="d-none d-md-flex ms-4">
                     <input class="form-control bg-dark border-0" type="search" placeholder="Search">
-                </form> -->
-                <!-- <div class="navbar-nav align-items-center ms-auto">
+                </form>
+                <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fa fa-envelope me-lg-2"></i>
@@ -178,67 +173,132 @@
                             <a href="#" class="dropdown-item">Log Out</a>
                         </div>
                     </div>
-                </div> -->
-            </nav>
-            <!-- Navbar End -->
-
-
-            <!-- Chart Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">Single Line Chart</h6>
-                            <canvas id="line-chart"></canvas>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">Multiple Line Chart</h6>
-                            <canvas id="calls-records"></canvas>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">Single Bar Chart</h6>
-                            <canvas id="bar-chart"></canvas>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">Multiple Bar Chart</h6>
-                            <canvas id="worldwide-sales"></canvas>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">Pie Chart</h6>
-                            <canvas id="pie-chart"></canvas>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">Doughnut Chart</h6>
-                            <canvas id="doughnut-chart"></canvas>
-                        </div>
-                    </div>
                 </div>
-            </div>
-            <!-- Chart End -->
+            </nav>
+             <h2 style="color: red">Edit VXML file</h2>
+             <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java.io.File, java.io.IOException, java.io.PrintWriter, java.io.StringWriter, java.nio.file.Files" %>
+<%@ page import="java.util.List, javax.servlet.RequestDispatcher, javax.servlet.ServletException, javax.servlet.http.HttpServlet, javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse" %>
+<%@ page import="javax.xml.parsers.*, javax.xml.transform.*, javax.xml.transform.dom.DOMSource, javax.xml.transform.stream.StreamResult, org.w3c.dom.Document, org.w3c.dom.Element" %>
+<%@ page import="org.apache.commons.fileupload.FileItem, org.apache.commons.fileupload.disk.DiskFileItemFactory, org.apache.commons.fileupload.servlet.ServletFileUpload" %>
 
 
-            <!-- Footer Start -->
-            <div class="container-fluid pt-4 px-4">
+<%
+    // Check if the request is a file upload request
+    if (!ServletFileUpload.isMultipartContent(request)) {
+        out.println("File upload not supported!");
+        return;
+    }
+
+    // Create a factory for disk-based file items
+    DiskFileItemFactory factory = new DiskFileItemFactory();
+
+    // Set memory threshold
+    factory.setSizeThreshold(1024 * 1024 * 3); // 3MB
+
+    // Set temporary location to store files
+    factory.setRepository(new File(System.getProperty("java.io.tmpdir")));
+
+    // Create a new file upload handler
+    ServletFileUpload upload = new ServletFileUpload(factory);
+
+    // Set maximum file size limit
+    upload.setFileSizeMax(1024 * 1024 * 40); // 40MB
+
+    // Set maximum request size limit
+    upload.setSizeMax(1024 * 1024 * 50); // 50MB
+
+    // Create the upload directory if it does not exist
+    String uploadDirectory = "D:\\Microsoft MB-910--AZ-900";
+    File uploadDir = new File(uploadDirectory);
+    if (!uploadDir.exists()) {
+        uploadDir.mkdirs();
+    }
+
+    try {
+        // Parse the request and retrieve file items
+        List<FileItem> formItems = upload.parseRequest(request);
+
+        if (formItems != null && formItems.size() > 0) {
+            // Process each file item
+            for (FileItem item : formItems) {
+                // Handle form fields differently than file uploads
+                if (item.isFormField()) {
+                    // Process regular form fields here
+                    String fieldName = item.getFieldName();
+                    String fieldValue = item.getString();
+                    // ...
+                } else {
+                    // Handle file uploads
+                    String fileName = new File(item.getName()).getName();
+                    String filePath = uploadDirectory + File.separator + fileName;
+                    File storeFile = new File(filePath);
+
+                    // Save the file to the upload directory
+                    item.write(storeFile);
+
+                    // Read the content of the uploaded file as XML
+                    DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+                    DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+                    Document document = dBuilder.parse(storeFile);
+                    document.getDocumentElement().normalize();
+
+                    // Wrap the XML content within a root element
+                    Element rootElement = document.createElement("fileContent");
+                    rootElement.appendChild(document.getDocumentElement());
+
+                    // Set the content type to XML
+                    response.setContentType("text/xml");
+
+                    // Convert the XML document to string
+                    TransformerFactory transformerFactory = TransformerFactory.newInstance();
+                    Transformer transformer = transformerFactory.newTransformer();
+                    transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");
+                    transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+                    StringWriter stringWriter = new StringWriter();
+                    transformer.transform(new DOMSource(rootElement), new StreamResult(stringWriter));
+                    String xmlContent = stringWriter.toString();
+
+                    // Store the XML content in a request attribute
+                    request.setAttribute("xmlContent", xmlContent);
+
+                    // Forward the request to the viewxml.jsp page
+                    RequestDispatcher dispatcher = request.getRequestDispatcher("viewxml.jsp");
+                    dispatcher.forward(request, response);
+                }
+            }
+        }
+    } catch (Exception ex) {
+        out.println("File upload failed due to an error: " + ex.getMessage());
+    }
+%>
+
+<style>
+    #text-editor {
+    background-color: darkgray;
+        color: darkred;
+        width: 1000px;
+        height: 600px;
+        font-size: 16px;
+    }
+    #message {
+        color: red;
+        font-size: 20px;
+    }
+    
+</style>
+
+     <div class="container-fluid pt-4 px-4">
                 <div class="bg-secondary rounded-top p-4">
                     <div class="row">
                         <div class="col-12 col-sm-6 text-center text-sm-start">
-                            &copy; <a href="#">Telecom Application Developer 43</a>, All Right Reserved. 
+                            &copy; <a href="#">Your Site Name</a>, All Right Reserved. 
                         </div>
-                        <!-- <div class="col-12 col-sm-6 text-center text-sm-end"> -->
+                        <div class="col-12 col-sm-6 text-center text-sm-end">
                             <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            <!-- Designed By <a href="https://htmlcodex.com">HTML Codex</a>
+                            Designed By <a href="https://htmlcodex.com">HTML Codex</a>
                             <br>Distributed By: <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </div>
