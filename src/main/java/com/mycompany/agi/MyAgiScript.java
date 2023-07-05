@@ -59,15 +59,16 @@ public class MyAgiScript extends BaseAgiScript {
 
             if (rate <= parsevxml().size()) {
                 System.out.println(parsevxml().get(rate - 1));
+                ac.getData( "", 3000);
                 streamFile(parsevxml().get(rate - 1));
-                ac.getData("", 1000);
+                ac.getData("", 2000);
                 streamFile("thankss"); //if record = 6 if no record = 0
                 char rec = ac.waitForDigit(5000);
                 System.out.println(rec);
                 int recordFlag = Character.getNumericValue(rec);
                 System.out.println(recordFlag);
                 if (recordFlag == 6) {
-                    System.out.println("call will recorded");
+                    System.out.println("recordingg");
                     streamFile("call_to_be_record");
                     LocalDateTime currentTime = LocalDateTime.now();
                     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss");
@@ -171,3 +172,5 @@ public class MyAgiScript extends BaseAgiScript {
     }
 
 }
+
+

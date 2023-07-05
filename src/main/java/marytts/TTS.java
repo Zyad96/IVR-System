@@ -75,19 +75,18 @@ public class TTS {
         // Create a MaryTTS interface
         LocalMaryInterface maryTts = new LocalMaryInterface();
 
-        // Generate audio from text
-        String greeting = "We appreciate your rating .";
-        String ratingInstructions = "Please press 6 if you have any further comments or suggestions to say , or press 0 to end the call .";
 
+ String greeting = " Thank you for rating our service as excellent (5)   We appreciate your positive feedback and commited to maintain the highest level of satisfaction   .";
+//        String ratingInstructions = "Your feedback is valuable to us   and will take it into  consideration to improve our service .";
         // Generate audio for greeting and rating instructions
-        AudioInputStream audioPlayer = maryTts.generateAudio(greeting + " " + ratingInstructions);
+        AudioInputStream audioPlayer = maryTts.generateAudio(greeting + "  ");
 
         // Convert the audio stream to a compatible format
         AudioFormat format = new AudioFormat(16000, 16, 1, true, false);
         AudioInputStream convertedStream = AudioSystem.getAudioInputStream(format, audioPlayer);
 
         // Save the audio as a .wav file
-        String filePath = "/home/aisha/Documents/thankss.wav";
+        String filePath = "/home/aisha/Documents/press5.wav";
         saveAudioToFile(convertedStream, filePath);
 
         // Rest of the code here
