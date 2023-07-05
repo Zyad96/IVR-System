@@ -9,29 +9,29 @@
         <if cond="rating == 1">
           <assign name="userRating" expr="1" />
           <prompt>
-            <audio src="confusion_prompt.wav" />
+            <audio src="press1" />
           </prompt>
         <elseif cond="rating == 2"/>
           <assign name="userRating" expr="2" />
           <prompt>
-            <audio src="feedback_prompt.wav" />
+            <audio src="press2" />
           </prompt>
         <elseif cond="rating == 3"/>
           <assign name="userRating" expr="3" />
           <prompt>
-            <audio src="feedback_prompt.wav" />
+           <audio src="press3" />
           </prompt>
         <elseif cond="rating == 4"/>
           <assign name="userRating" expr="4" />
           <prompt>
-            <audio src="feedback_prompt.wav" />
+            <audio src="press4" />
           </prompt>
         <elseif cond="rating == 5"/>
           <assign name="userRating" expr="5" />
           <prompt>
-           <audio src="satisfied_prompt.wav" />
+           <audio src="press5" />
           </prompt>
-         <!--  -->
+         <!-- manar -->
         <elseif cond="rating == 6"/>
           <assign name="userRating" expr="6" />
           <prompt>
@@ -42,7 +42,7 @@
              Please speak your complaint after the beep.
            </prompt>
           </record>
-         <!--  -->
+         <!-- manar -->
         <else/>
           <prompt>
             <!-- <audio src="invalid_rating_prompt.wav" /> -->
