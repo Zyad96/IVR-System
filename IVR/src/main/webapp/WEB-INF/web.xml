@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <!-- Other configuration elements for your web application -->
-    
     <servlet>
         <servlet-name>default</servlet-name>
         <servlet-class>org.apache.catalina.servlets.DefaultServlet</servlet-class>
@@ -15,12 +14,19 @@
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
-    
+    <servlet>
+        <servlet-name>Chart</servlet-name>
+        <servlet-class>Chart</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>default</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
-    
+  
+    <servlet-mapping>
+        <servlet-name>Chart</servlet-name>
+        <url-pattern>/Chart</url-pattern>
+    </servlet-mapping>
     <mime-mapping>
         <extension>wav</extension>
         <mime-type>audio/wav</mime-type>

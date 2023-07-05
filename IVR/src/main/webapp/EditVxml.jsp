@@ -1,6 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+<%-- 
+    Document   : EditVxml
+    Created on : Jun 29, 2023, 6:05:07 PM
+    Author     : aisha
+--%>
 
+<%@page import="java.io.IOException"%>
+<%@page import="java.io.FileReader"%>
+<%@page import="java.io.BufferedReader"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html
 <head>
     <meta charset="utf-8">
     <title>DarkPan - Bootstrap 5 Admin Template</title>
@@ -46,7 +55,7 @@
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-secondary navbar-dark">
                 <a href="index.html" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>IVR</h3>
+                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>DarkPan</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
@@ -59,29 +68,27 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="index.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-             
-                     <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a> 
-                             <a href="UploadVXML.html" class="nav-item nav-link"><i class="fas fa-edit"></i>Edit VXML</a>
-                    <!-- <div class="nav-item dropdown">
+                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Charts</a>
+                    <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
-                        <div class="dropdown-menu bg-transparent border-0">
+<!--                        <div class="dropdown-menu bg-transparent border-0">
                             <a href="button.html" class="dropdown-item">Buttons</a>
                             <a href="typography.html" class="dropdown-item">Typography</a>
-                            <a href="element.html" class="dropdown-item">Other Elements</a>
+                            <a href="element.html" class="dropdown-item">Other Elements</a>-->
                         </div>
-                    </div> -->
-<!--                     <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
-                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
-                    
--->                    <a href="chart.html" class="nav-item nav-link active"><i class="fa fa-chart-bar me-2"></i>Charts</a><!--
-                    <div class="nav-item dropdown">
-                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a> 
+                    </div>
+<!--                    <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
+                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>-->
+                    <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
+                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
+                     <a href="blank.html" class="nav-item nav-link"><i class="fas fa-edit"></i>Edit VXML</a>
+<!--                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="signin.html" class="dropdown-item">Sign In</a>
                             <a href="signup.html" class="dropdown-item">Sign Up</a>
-                            <a href="404.html" class="dropdown-item">404 Error</a>
-                            <a href="blank.html" class="dropdown-item">Blank Page</a>-->
+                            <a href="404.html" class="dropdown-item">404 Error</a>-->
+<!--                            <a href="blank.html" class="dropdown-item active">Edit VXML</a>-->
                         </div>
                     </div>
                 </div>
@@ -100,10 +107,10 @@
                 <a href="#" class="sidebar-toggler flex-shrink-0">
                     <i class="fa fa-bars"></i>
                 </a>
-                <!-- <form class="d-none d-md-flex ms-4">
+                <form class="d-none d-md-flex ms-4">
                     <input class="form-control bg-dark border-0" type="search" placeholder="Search">
-                </form> -->
-                <!-- <div class="navbar-nav align-items-center ms-auto">
+                </form>
+                <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fa fa-envelope me-lg-2"></i>
@@ -178,53 +185,90 @@
                             <a href="#" class="dropdown-item">Log Out</a>
                         </div>
                     </div>
-                </div> -->
+                </div>
             </nav>
             <!-- Navbar End -->
 
 
-            <!-- Chart Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">Single Line Chart</h6>
-                            <canvas id="line-chart"></canvas>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">Multiple Line Chart</h6>
-                            <canvas id="calls-records"></canvas>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">Single Bar Chart</h6>
-                            <canvas id="bar-chart"></canvas>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">Multiple Bar Chart</h6>
-                            <canvas id="worldwide-sales"></canvas>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">Pie Chart</h6>
-                            <canvas id="pie-chart"></canvas>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">Doughnut Chart</h6>
-                            <canvas id="doughnut-chart"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Chart End -->
+            <h1 style="color: red">Edit VXML</h1>
+
+    <%-- Define the path of the file to be edited --%>
+    <% String filePath = "/home/aisha/test.vxml"; %>
+
+    <%-- Read the file content using a BufferedReader --%>
+    <% String fileContent = "";
+       try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+           String line;
+           while ((line = br.readLine()) != null) {
+               fileContent += line + "\n";
+           }
+       } catch (IOException e) {
+           e.printStackTrace();
+       }
+    %>
+
+    <%-- Display the file content in a textarea --%>
+<!--    <form id="saveForm" method="post">
+      <textarea name="fileContent" id="text-editor"><%= fileContent %></textarea>
+    <br>
+    <input type="submit" value="Save">
+        <div id="message"></div>  Placeholder for success/error message 
+
+</form>-->
+    <form id="saveForm" method="post" enctype="multipart/form-data">
+  <textarea name="fileContent" id="text-editor"><%= fileContent %></textarea>
+  <br>
+  <input type="file" name="audioFile" accept="audio/*">
+  <br>
+  <input type="submit"  class="btn btn-primary m-2" value="Save File">
+  <div id="message"></div> <!-- Placeholder for success/error message -->
+</form>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $('#saveForm').submit(function(e) {
+      e.preventDefault(); // Prevent the form from submitting normally
+
+      // Get the form data
+      var formData = $(this).serialize();
+
+      // Send an AJAX request to save the file
+      $.ajax({
+        type: 'POST',
+        url: 'SaveFile.jsp',
+        data: formData,
+        success: function(response) {
+          // Display success message
+          $('#message').text('File saved successfully');
+        },
+        error: function(xhr, status, error) {
+          // Display error message
+          $('#message').text('Failed to save the file');
+        }
+      });
+    });
+  });
+</script>
+
+
+
+<style>
+    #text-editor {
+    background-color: darkgray;
+        color: darkred;
+        width: 1000px;
+        height: 600px;
+        font-size: 16px;
+    }
+    #message {
+        color: red;
+        font-size: 20px;
+    }
+    
+</style>
+            <!-- Blank End -->
 
 
             <!-- Footer Start -->
@@ -232,13 +276,13 @@
                 <div class="bg-secondary rounded-top p-4">
                     <div class="row">
                         <div class="col-12 col-sm-6 text-center text-sm-start">
-                            &copy; <a href="#">Telecom Application Developer 43</a>, All Right Reserved. 
+                            &copy; <a href="#">Your Site Name</a>, All Right Reserved. 
                         </div>
-                        <!-- <div class="col-12 col-sm-6 text-center text-sm-end"> -->
+                        <div class="col-12 col-sm-6 text-center text-sm-end">
                             <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            <!-- Designed By <a href="https://htmlcodex.com">HTML Codex</a>
+                            Designed By <a href="https://htmlcodex.com">HTML Codex</a>
                             <br>Distributed By: <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -252,8 +296,7 @@
     </div>
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/chart/chart.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>

@@ -69,7 +69,7 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="index.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Charts</a>
                     <div class="nav-item dropdown">
 
                     <a href="records1.jsp" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Records</a> 
