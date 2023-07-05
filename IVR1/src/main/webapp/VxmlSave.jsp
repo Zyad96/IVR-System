@@ -22,7 +22,7 @@
         directory.mkdirs();
     }
 
-    try (FileWriter writer = new FileWriter(saveDirectory + File.separator + "modified.xml")) {
+    try (FileWriter writer = new FileWriter(saveDirectory + File.separator + "modified.vxml")) {
         writer.write(editedXmlContent);
     } catch (IOException e) {
         e.printStackTrace();
